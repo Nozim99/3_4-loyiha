@@ -1,0 +1,29 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="img-area">
+    <div>
+        <h1>Clean Blog</h1>
+        <p class="p">A Blog Theme by Start Bootstrap</p>
+    </div>
+</div>
+<div class="contents-area">
+    @each(post in posts)
+    <div class="content">
+        <a href="/post/{{post._id}}" class="display-block index-contens a-tag-none-style"><h1 class="title">{{post.title}}</h1></a>
+        <a href="/post/{{post._id}}" class="display-block index-contens a-tag-none-style"><p class="description">{{post.description}}</p></a>
+        <a href="/post/{{post._id}}" class="display-block index-contens a-tag-none-style"><p class="date">Posted by <b class="ff-cursive">{{post.username}}</b> {{post.createdAt.toDateString()}}</p></a>                
+    </div>
+    @endeach
+    
+    
+    {{--    --}}
+    
+   
+    <div class="button__place">
+        <button>OLDER POSTS <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</div>
+
+@endsection

@@ -1,0 +1,28 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="img-area img-area-reg">
+    <div>
+        <h1>Register</h1>
+        <p class="p">After register you can create any post...</p>
+    </div>
+</div>
+
+<div class="container">
+    @if(errors.length > 0)
+        <ul class="register-errors">
+            @each(err in errors)
+                <li class="register-errors-list">{{err}}</li>
+            @endeach
+        </ul>
+    @endif
+    <form class="contact-form" action="/auth/reg" method="POST" enctype="multipart/form-data">
+        <input type="text" name="username" class="name-area contact-input" value="{{data.username || ''}}" placeholder="Enter Your Name...">
+        <input type="email" name="email" class="name-area contact-input" value="{{data.email || ''}}" placeholder="Enter your email">
+        <input type="password" name="password" class="email-area contact-input" value="{{data.password || ''}}" placeholder="Enter your password">
+        <button class="register-btn">Register</button>
+    </form>
+</div>
+
+@endsection

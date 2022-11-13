@@ -1,0 +1,22 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="img-area img-area-post" style="background-image: url('/posts/{{post.image}}')">
+    <div class="container">
+        <div class="sample-post__title">
+            <h2 class="post-header">{{post.title}}</h2>
+            <p class="sample-post__title__under__text p">{{post.description}}</p>
+            <p class="sample-post__date">Posted by <b class="ff-cursive">{{post.username}}</b> {{post.createdAt.toDateString()}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="posts-title">{{post.title}}</h2>
+    <p class="post-text">
+        {{post.content}}
+    </p>
+</div>
+
+@endsection

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Simple Website</title>
+</head>
+
+<body>
+    {{--  Navigation  --}}
+    <nav>
+        <h2><a href="/">Node Blogs</a></h2>
+        <ul class="header__list">
+            @if(!auth)
+            <li><a href="/reg">REGISTER</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            @else
+            <li><a href="/posts/new">CREATE POST</a></li>
+            <li><a href="/logout">LOG OUT</a></li>
+            @endif
+        </ul>
+    </nav>
+
+    {{--  Main Content  --}}
+    @!section('content')
+
+    {{--  Footer  --}}
+    <footer class="footer">
+        <div class="footer__place">
+            <div class="footer__icons">
+                <a href="#" class="footer__icons-position"><i class="social__networks fa-brands fa-telegram"></i></a>
+                <a href="#" class="footer__icons-position"><i class="social__networks fa-brands fa-square-twitter"></i></a>
+                <a href="#" class="footer__icons-position"><i class="social__networks fa-brands fa-facebook"></i></a>
+                <a href="#" class="footer__icons-position"><i class="social__networks github__icon fa-brands fa-github"></i></a>
+            </div>
+            <div class="footer__text">
+                Copyright &copy; Your Website 2022
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

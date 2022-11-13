@@ -1,0 +1,33 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="img-area img-area-contact">
+    <div>
+        <h1>Create Post</h1>
+        <p class="p">You can say everything what do you want?</p>
+    </div>
+</div>
+
+<div class="container">
+    {{--  <div class="contact-text__area">  --}}
+        {{--  Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!  --}}
+    {{--  </div>  --}}
+
+    <form class="contact-form " action="/posts/create" method="POST" enctype="multipart/form-data">
+        <input type="text" name="username" class="name-area contact-input" placeholder="Enter Your Name...">
+        <input type="text" name="title" class="name-area contact-input" placeholder="Title">
+        <input type="text" name="description" class="email-area contact-input" placeholder="Description">
+        {{--  <input type="number" class="contact-input" placeholder="Phone Number">  --}}
+        <textarea name="content" placeholder="Content"></textarea>
+        <div>
+            <label id="image-file" class="content-form__img-file">
+                <span>Choose image</span>
+                <input id="image-file" type="file" name="image" accept="image/*">
+            </label>
+        </div>
+        <button>SEND</button>
+    </form>
+</div>
+
+@endsection
